@@ -39,239 +39,227 @@ class _ArtistHomePageState extends State<ArtistHomePage> {
             width: Get.width,
             color: AppColor.whiteColor,
             padding: const EdgeInsets.all(15),
-            child: SingleChildScrollView(
-              child: Obx(() => Column(
-                  mainAxisSize: MainAxisSize.max,
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Padding(
-                      padding: EdgeInsets.only(top: 10.sp),
-                      child: Center(
-                        child: Stack(
-                          alignment: Alignment.center,
-                          children: [
-                            Container(
-                              height: 100.sp, // Size of the circular border
-                              width: 100.sp,
-                              decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(
-                                    50.r), // Circular border
-                                border: Border.all(
-                                  color: const Color(0xffe50829),
-                                  width: 3.sp,
-                                ),
+            child: Obx(() => Column(
+                mainAxisSize: MainAxisSize.max,
+                mainAxisAlignment: MainAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Padding(
+                    padding: EdgeInsets.only(top: 10.sp),
+                    child: Center(
+                      child: Stack(
+                        alignment: Alignment.center,
+                        children: [
+                          Container(
+                            height: 100.sp, // Size of the circular border
+                            width: 100.sp,
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(
+                                  50.r), // Circular border
+                              border: Border.all(
+                                color: const Color(0xffe50829),
+                                width: 3.sp,
                               ),
-                              child: ClipRRect(
-                                borderRadius: BorderRadius.circular(70.r),
-                                child: Container(
-                                  height: 90.sp,
-                                  width: 90.sp,
-                                  decoration: BoxDecoration(
-                                    borderRadius:
-                                    BorderRadius.circular(100),
-                                    color: Colors.black12,
-                                  ),
-                                  child: CachedNetworkImage(
-                                    fit: BoxFit.cover,
-                                    imageUrl:
-                                    profileController
-                                        .profileModel.value.data?.first.profile.toString() ??
-                                        '',
-                                    placeholder: (context, url) =>
-                                    const CupertinoActivityIndicator(),
-                                    errorWidget: (context, url, error) =>
-                                        Container(
-                                          decoration: BoxDecoration(
-                                            color: Colors.black26,
-                                            borderRadius:
-                                            BorderRadius.circular(8.r),
-                                          ),
-                                          child: Icon(CupertinoIcons.person),
+                            ),
+                            child: ClipRRect(
+                              borderRadius: BorderRadius.circular(70.r),
+                              child: Container(
+                                height: 90.sp,
+                                width: 90.sp,
+                                decoration: BoxDecoration(
+                                  borderRadius:
+                                  BorderRadius.circular(100),
+                                  color: Colors.black12,
+                                ),
+                                child: CachedNetworkImage(
+                                  fit: BoxFit.cover,
+                                  imageUrl:
+                                  profileController
+                                      .profileModel.value.data?.first.profile.toString() ??
+                                      '',
+                                  placeholder: (context, url) =>
+                                  const CupertinoActivityIndicator(),
+                                  errorWidget: (context, url, error) =>
+                                      Container(
+                                        decoration: BoxDecoration(
+                                          color: Colors.black26,
+                                          borderRadius:
+                                          BorderRadius.circular(8.r),
                                         ),
-                                  ),
+                                        child: Icon(CupertinoIcons.person),
+                                      ),
                                 ),
                               ),
                             ),
-                            Positioned(
-                              bottom: 0,
-                              right: 0,
-                              child: SizedBox(
-                                height: 22.sp,
-                                width: 22.sp,
-                                child: InkWell(
-                                  onTap: () {
-                                    showModalBottomSheet(
-                                      // backgroundColor: ,
-                                        context: context,
-                                        builder: (BuildContext context) {
-                                          return SizedBox(
-                                            height: 100.sp,
-                                            width: Get.width.sp,
-                                            // color: Colors.black26,
-                                            child: Column(
-                                              mainAxisAlignment:
-                                              MainAxisAlignment.center,
-                                              crossAxisAlignment:
-                                              CrossAxisAlignment.center,
-                                              children: [
-                                                Row(
-                                                  mainAxisSize:
-                                                  MainAxisSize.max,
-                                                  mainAxisAlignment:
-                                                  MainAxisAlignment
-                                                      .center,
-                                                  crossAxisAlignment:
-                                                  CrossAxisAlignment
-                                                      .center,
-                                                  children: [
-                                                    Padding(
-                                                      padding:
-                                                      const EdgeInsets
-                                                          .all(8.0),
-                                                      child: Container(
-                                                        decoration:
-                                                        BoxDecoration(
+                          ),
+                          Positioned(
+                            bottom: 0,
+                            right: 0,
+                            child: SizedBox(
+                              height: 22.sp,
+                              width: 22.sp,
+                              child: InkWell(
+                                onTap: () {
+                                  showModalBottomSheet(
+                                    // backgroundColor: ,
+                                      context: context,
+                                      builder: (BuildContext context) {
+                                        return SizedBox(
+                                          height: 100.sp,
+                                          width: Get.width.sp,
+                                          // color: Colors.black26,
+                                          child: Column(
+                                            mainAxisAlignment:
+                                            MainAxisAlignment.center,
+                                            crossAxisAlignment:
+                                            CrossAxisAlignment.center,
+                                            children: [
+                                              Row(
+                                                mainAxisSize:
+                                                MainAxisSize.max,
+                                                mainAxisAlignment:
+                                                MainAxisAlignment
+                                                    .center,
+                                                crossAxisAlignment:
+                                                CrossAxisAlignment
+                                                    .center,
+                                                children: [
+                                                  Padding(
+                                                    padding:
+                                                    const EdgeInsets
+                                                        .all(8.0),
+                                                    child: Container(
+                                                      decoration:
+                                                      BoxDecoration(
+                                                        color: Colors
+                                                            .blueGrey,
+                                                        borderRadius:
+                                                        const BorderRadius
+                                                            .all(
+                                                            Radius.circular(
+                                                                10)),
+                                                        border:
+                                                        Border.all(
+                                                          width: 1,
                                                           color: Colors
-                                                              .blueGrey,
-                                                          borderRadius:
-                                                          const BorderRadius
-                                                              .all(
-                                                              Radius.circular(
-                                                                  10)),
-                                                          border:
-                                                          Border.all(
-                                                            width: 1,
-                                                            color: Colors
-                                                                .black26,
-                                                            style:
-                                                            BorderStyle
-                                                                .solid,
-                                                          ),
+                                                              .black26,
+                                                          style:
+                                                          BorderStyle
+                                                              .solid,
                                                         ),
-                                                        child: IconButton(
-                                                            onPressed:
-                                                                () async {
-                                                              // File?
-                                                              // imageFile =
-                                                              // await artistProfileController
-                                                              //     .pickImage(
-                                                              //     ImageSource.camera);
-                                                              // if (imageFile !=
-                                                              //     null) {
-                                                              //   await artistProfileController.cropimage(
-                                                              //       source: imageFile!
-                                                              //           .path
-                                                              //           .toString(),
-                                                              //       context:
-                                                              //       context);
-                                                              // }
-                                                            },
-                                                            icon: Icon(
+                                                      ),
+                                                      child: IconButton(
+                                                          onPressed:
+                                                              () async {
+                                                            // File?
+                                                            // imageFile =
+                                                            // await artistProfileController
+                                                            //     .pickImage(
+                                                            //     ImageSource.camera);
+                                                            // if (imageFile !=
+                                                            //     null) {
+                                                            //   await artistProfileController.cropimage(
+                                                            //       source: imageFile!
+                                                            //           .path
+                                                            //           .toString(),
+                                                            //       context:
+                                                            //       context);
+                                                            // }
+                                                          },
+                                                          icon: Icon(
+                                                            CupertinoIcons
+                                                                .camera,
+                                                            size: 30,
+                                                            color: Colors
+                                                                .white,
+                                                          )),
+                                                    ),
+                                                  ),
+                                                  Padding(
+                                                    padding:
+                                                    const EdgeInsets
+                                                        .all(8.0),
+                                                    child: Container(
+                                                      decoration:
+                                                      BoxDecoration(
+                                                        color:
+                                                        Colors.brown,
+                                                        borderRadius:
+                                                        const BorderRadius
+                                                            .all(
+                                                            Radius.circular(
+                                                                10)),
+                                                        border:
+                                                        Border.all(
+                                                          width: 1,
+                                                          color: Colors
+                                                              .black26,
+                                                          style:
+                                                          BorderStyle
+                                                              .solid,
+                                                        ),
+                                                      ),
+                                                      child: IconButton(
+                                                          onPressed:
+                                                              () async {
+                                                            // First, pick the image
+                                                            // File?
+                                                            // imageFile =
+                                                            // await artistProfileController
+                                                            //     .pickImage(
+                                                            //     ImageSource.gallery);
+                                                            //
+                                                            // // Check if an image was picked
+                                                            // if (imageFile !=
+                                                            //     null) {
+                                                            //   // Perform the crop operation
+                                                            //   await artistProfileController
+                                                            //       .cropimage(
+                                                            //     source: imageFile
+                                                            //         .path
+                                                            //         .toString(),
+                                                            //     context:
+                                                            //     context,
+                                                            //   );
+                                                            // }
+                                                          },
+                                                          icon: const Icon(
                                                               CupertinoIcons
-                                                                  .camera,
+                                                                  .photo,
                                                               size: 30,
                                                               color: Colors
-                                                                  .white,
-                                                            )),
-                                                      ),
+                                                                  .white)),
                                                     ),
-                                                    Padding(
-                                                      padding:
-                                                      const EdgeInsets
-                                                          .all(8.0),
-                                                      child: Container(
-                                                        decoration:
-                                                        BoxDecoration(
-                                                          color:
-                                                          Colors.brown,
-                                                          borderRadius:
-                                                          const BorderRadius
-                                                              .all(
-                                                              Radius.circular(
-                                                                  10)),
-                                                          border:
-                                                          Border.all(
-                                                            width: 1,
-                                                            color: Colors
-                                                                .black26,
-                                                            style:
-                                                            BorderStyle
-                                                                .solid,
-                                                          ),
-                                                        ),
-                                                        child: IconButton(
-                                                            onPressed:
-                                                                () async {
-                                                              // First, pick the image
-                                                              // File?
-                                                              // imageFile =
-                                                              // await artistProfileController
-                                                              //     .pickImage(
-                                                              //     ImageSource.gallery);
-                                                              //
-                                                              // // Check if an image was picked
-                                                              // if (imageFile !=
-                                                              //     null) {
-                                                              //   // Perform the crop operation
-                                                              //   await artistProfileController
-                                                              //       .cropimage(
-                                                              //     source: imageFile
-                                                              //         .path
-                                                              //         .toString(),
-                                                              //     context:
-                                                              //     context,
-                                                              //   );
-                                                              // }
-                                                            },
-                                                            icon: const Icon(
-                                                                CupertinoIcons
-                                                                    .photo,
-                                                                size: 30,
-                                                                color: Colors
-                                                                    .white)),
-                                                      ),
-                                                    )
-                                                  ],
-                                                )
-                                              ],
-                                            ),
-                                          );
-                                        });
-                                  },
-                                  child: CircleAvatar(
-                                    backgroundColor:
-                                    Colors.deepPurpleAccent,
-                                    child: Icon(
-                                      Icons.edit,
-                                      color: Colors.white,
-                                      size: 15.sp,
-                                    ),
+                                                  )
+                                                ],
+                                              )
+                                            ],
+                                          ),
+                                        );
+                                      });
+                                },
+                                child: CircleAvatar(
+                                  backgroundColor:
+                                  Colors.deepPurpleAccent,
+                                  child: Icon(
+                                    Icons.edit,
+                                    color: Colors.white,
+                                    size: 15.sp,
                                   ),
                                 ),
                               ),
                             ),
-                          ],
-                        ),
-                      ),
-                    ),
-
-                    Center(
-                      child: Padding(
-                        padding: EdgeInsets.symmetric(vertical: 8.sp),
-                        child:  Text(
-                         artistDashBoardController.dashBoardModel.value.data?[0].artistName.toString() ?? '0',
-                          style: TextStyle(
-                            fontSize: 16.sp,
-                            color: AppColor.blackTextColor,
-                            fontFamily: "PoppinsSemiBold",
                           ),
-                        ),
+                        ],
                       ),
                     ),
-                    Center(
+                  ),
+
+                  Center(
+                    child: Padding(
+                      padding: EdgeInsets.symmetric(vertical: 8.sp),
                       child:  Text(
-                        "${artistDashBoardController.dashBoardModel.value.data?.first.artistPromocode.toString() ?? '0'}",
+                       artistDashBoardController.dashBoardModel.value.data?[0].artistName.toString() ?? '0',
                         style: TextStyle(
                           fontSize: 16.sp,
                           color: AppColor.blackTextColor,
@@ -279,189 +267,202 @@ class _ArtistHomePageState extends State<ArtistHomePage> {
                         ),
                       ),
                     ),
-                    Center(
-                      child: Padding(
-                        padding: EdgeInsets.symmetric(vertical: 15.sp),
-                        child: Column(
-                          children: [
-                            Container(
-                              decoration: BoxDecoration(
-                                  color: const Color(0xfff2f2f2),
-                                  borderRadius:
-                                  BorderRadius.circular(12.r)),
-                              width: 253.sp,
-                              height: 64.sp,
-                              child: Row(
-                                mainAxisSize: MainAxisSize.max,
-                                crossAxisAlignment:
-                                CrossAxisAlignment.center,
-                                children: [
-                                  Container(
-                                    width: 80.sp,
-                                    alignment: Alignment.center,
-                                    child: Padding(
-                                      padding: const EdgeInsets.all(8.0),
-                                      child: Column(
-                                        mainAxisSize: MainAxisSize.max,
-                                        crossAxisAlignment:
-                                        CrossAxisAlignment.center,
-                                        mainAxisAlignment:
-                                        MainAxisAlignment.center,
-                                        children: [
-                                          Text(
-                                           "${artistDashBoardController.dashBoardModel.value.totalEarning.toString() ?? '0'}",
-                                            style: TextStyle(
-                                              fontSize: 14.sp,
-                                              color: AppColor.blackTextColor,
-                                              fontFamily: "PoppinsMedium",
-                                            ),
-                                          ),
-                                          Text(
-                                            'Revenue',
-                                            style: TextStyle(
-                                              fontSize: 12.sp,
-                                              color: AppColor.blackTextColor,
-                                              fontFamily: "PoppinsMedium",
-                                            ),
-                                          ),
-                                        ],
-                                      ),
-                                    ),
-                                  ),
-                                  Expanded(
-                                    child: Container(
-                                      decoration: BoxDecoration(
-                                        color: Colors.white24,
-                                        border: Border(
-                                          right: BorderSide(
-                                            //                   <--- left side
-                                            color: const Color(0xff4d4d4d),
-                                            width: 1.0.sp,
-                                          ),
-                                          left: BorderSide(
-                                            //                   <--- left side
-                                            color: const Color(0xff4d4d4d),
-                                            width: 1.0.sp,
-                                          ),
-                                        ),
-                                      ),
-                                      alignment: Alignment.center,
-                                      child: Padding(
-                                        padding: const EdgeInsets.all(8.0),
-                                        child: Column(
-                                          mainAxisSize: MainAxisSize.max,
-                                          crossAxisAlignment:
-                                          CrossAxisAlignment.center,
-                                          mainAxisAlignment:
-                                          MainAxisAlignment.center,
-                                          children: [
-                                            Text(
-                                              "${artistDashBoardController.dashBoardModel.value.totalplaytime.toString() ?? '0'}",
-                                              style: TextStyle(
-                                                fontSize: 14.sp,
-                                                color: AppColor.blackTextColor,
-                                                fontFamily: "PoppinsMedium",
-                                              ),
-                                            ),
-                                            Text(
-                                           'PlayTime',
-                                              style: TextStyle(
-                                                fontSize: 12.sp,
-                                                color: AppColor.blackTextColor,
-                                                fontFamily: "PoppinsMedium",
-                                              ),
-                                            ),
-                                          ],
-                                        ),
-                                      ),
-                                    ),
-                                  ),
-                                  Container(
-                                    width: 80.sp,
-                                    alignment: Alignment.center,
-                                    child: Padding(
-                                      padding: const EdgeInsets.all(8.0),
-                                      child: Column(
-                                        mainAxisSize: MainAxisSize.max,
-                                        crossAxisAlignment:
-                                        CrossAxisAlignment.center,
-                                        mainAxisAlignment:
-                                        MainAxisAlignment.center,
-                                        children: [
-                                          Text(
-                                            "${artistDashBoardController.dashBoardModel.value.songList?.length.toString() ?? '0'}",
-                                            style: TextStyle(
-                                              fontSize: 14.sp,
-                                              color: AppColor.blackTextColor,
-                                              fontFamily: "PoppinsMedium",
-                                            ),
-                                          ),
-
-                                          Text(
-                                            'Songs',
-                                            style: TextStyle(
-                                              fontSize: 12.sp,
-                                              color: AppColor.blackTextColor,
-                                              fontFamily: "PoppinsMedium",
-                                            ),
-                                          ),
-                                        ],
-                                      ),
-                                    ),
-                                  )
-                                ],
-                              ),
-                            ),
-                            Container(
-                                decoration: BoxDecoration(
-                                    color: const Color(0xff2096f5),
-                                    borderRadius: BorderRadius.only(
-                                        bottomLeft:
-                                        Radius.circular(12.0.sp),
-                                        bottomRight: Radius.circular(12.0
-                                            .sp) //                 <--- border radius here
-                                    ),
-                                    border: Border(
-                                      top: BorderSide(
-                                        //                   <--- left side
-                                        color: Colors.white,
-                                        width: 1.0.sp,
-                                      ),
-                                    )),
-                                width: 88.sp,
-                                height: 45.sp,
-                                child: Column(
-                                  mainAxisAlignment:
-                                  MainAxisAlignment.center,
-                                  children: [
-                                    Text(
-                                      "${artistDashBoardController.dashBoardModel.value.follower.toString() ?? '0'}",
-                                      style: TextStyle(
-                                        fontSize: 14.sp,
-                                        color: AppColor.whiteColor,
-                                        fontFamily: "PoppinsMedium",
-                                      ),
-                                    ),
-                                    Text(
-                                     "Followers",
-                                      style: TextStyle(
-                                        fontSize: 12.sp,
-                                        color: AppColor.whiteColor,
-                                        fontFamily: "PoppinsMedium",
-                                      ),
-                                    ),
-                                  ],
-                                )),
-                          ],
-                        ),
+                  ),
+                  Center(
+                    child:  Text(
+                      "${artistDashBoardController.dashBoardModel.value.data?.first.artistPromocode.toString() ?? '0'}",
+                      style: TextStyle(
+                        fontSize: 16.sp,
+                        color: AppColor.blackTextColor,
+                        fontFamily: "PoppinsSemiBold",
                       ),
                     ),
-                    Divider(color: Colors.black,),
-                    Expanded(child: ListView(children: [
+                  ),
+                  Center(
+                    child: Padding(
+                      padding: EdgeInsets.symmetric(vertical: 15.sp),
+                      child: Column(
+                        children: [
+                          Container(
+                            decoration: BoxDecoration(
+                                color: const Color(0xfff2f2f2),
+                                borderRadius:
+                                BorderRadius.circular(12.r)),
+                            width: 253.sp,
+                            height: 64.sp,
+                            child: Row(
+                              mainAxisSize: MainAxisSize.max,
+                              crossAxisAlignment:
+                              CrossAxisAlignment.center,
+                              children: [
+                                Container(
+                                  width: 80.sp,
+                                  alignment: Alignment.center,
+                                  child: Padding(
+                                    padding: const EdgeInsets.all(8.0),
+                                    child: Column(
+                                      mainAxisSize: MainAxisSize.max,
+                                      crossAxisAlignment:
+                                      CrossAxisAlignment.center,
+                                      mainAxisAlignment:
+                                      MainAxisAlignment.center,
+                                      children: [
+                                        Text(
+                                         "${artistDashBoardController.dashBoardModel.value.totalEarning.toString() ?? '0'}",
+                                          style: TextStyle(
+                                            fontSize: 14.sp,
+                                            color: AppColor.blackTextColor,
+                                            fontFamily: "PoppinsMedium",
+                                          ),
+                                        ),
+                                        Text(
+                                          'Revenue',
+                                          style: TextStyle(
+                                            fontSize: 12.sp,
+                                            color: AppColor.blackTextColor,
+                                            fontFamily: "PoppinsMedium",
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                ),
+                                Expanded(
+                                  child: Container(
+                                    decoration: BoxDecoration(
+                                      color: Colors.white24,
+                                      border: Border(
+                                        right: BorderSide(
+                                          //                   <--- left side
+                                          color: const Color(0xff4d4d4d),
+                                          width: 1.0.sp,
+                                        ),
+                                        left: BorderSide(
+                                          //                   <--- left side
+                                          color: const Color(0xff4d4d4d),
+                                          width: 1.0.sp,
+                                        ),
+                                      ),
+                                    ),
+                                    alignment: Alignment.center,
+                                    child: Padding(
+                                      padding: const EdgeInsets.all(8.0),
+                                      child: Column(
+                                        mainAxisSize: MainAxisSize.max,
+                                        crossAxisAlignment:
+                                        CrossAxisAlignment.center,
+                                        mainAxisAlignment:
+                                        MainAxisAlignment.center,
+                                        children: [
+                                          Text(
+                                            "${artistDashBoardController.dashBoardModel.value.totalplaytime.toString() ?? '0'}",
+                                            style: TextStyle(
+                                              fontSize: 14.sp,
+                                              color: AppColor.blackTextColor,
+                                              fontFamily: "PoppinsMedium",
+                                            ),
+                                          ),
+                                          Text(
+                                         'PlayTime',
+                                            style: TextStyle(
+                                              fontSize: 12.sp,
+                                              color: AppColor.blackTextColor,
+                                              fontFamily: "PoppinsMedium",
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                                Container(
+                                  width: 80.sp,
+                                  alignment: Alignment.center,
+                                  child: Padding(
+                                    padding: const EdgeInsets.all(8.0),
+                                    child: Column(
+                                      mainAxisSize: MainAxisSize.max,
+                                      crossAxisAlignment:
+                                      CrossAxisAlignment.center,
+                                      mainAxisAlignment:
+                                      MainAxisAlignment.center,
+                                      children: [
+                                        Text(
+                                          "${artistDashBoardController.dashBoardModel.value.songList?.length.toString() ?? '0'}",
+                                          style: TextStyle(
+                                            fontSize: 14.sp,
+                                            color: AppColor.blackTextColor,
+                                            fontFamily: "PoppinsMedium",
+                                          ),
+                                        ),
 
-                    ],))
-                  ]
-              ),),),
+                                        Text(
+                                          'Songs',
+                                          style: TextStyle(
+                                            fontSize: 12.sp,
+                                            color: AppColor.blackTextColor,
+                                            fontFamily: "PoppinsMedium",
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                )
+                              ],
+                            ),
+                          ),
+                          Container(
+                              decoration: BoxDecoration(
+                                  color: const Color(0xff2096f5),
+                                  borderRadius: BorderRadius.only(
+                                      bottomLeft:
+                                      Radius.circular(12.0.sp),
+                                      bottomRight: Radius.circular(12.0
+                                          .sp) //                 <--- border radius here
+                                  ),
+                                  border: Border(
+                                    top: BorderSide(
+                                      //                   <--- left side
+                                      color: Colors.white,
+                                      width: 1.0.sp,
+                                    ),
+                                  )),
+                              width: 88.sp,
+                              height: 45.sp,
+                              child: Column(
+                                mainAxisAlignment:
+                                MainAxisAlignment.center,
+                                children: [
+                                  Text(
+                                    "${artistDashBoardController.dashBoardModel.value.follower.toString() ?? '0'}",
+                                    style: TextStyle(
+                                      fontSize: 14.sp,
+                                      color: AppColor.whiteColor,
+                                      fontFamily: "PoppinsMedium",
+                                    ),
+                                  ),
+                                  Text(
+                                   "Followers",
+                                    style: TextStyle(
+                                      fontSize: 12.sp,
+                                      color: AppColor.whiteColor,
+                                      fontFamily: "PoppinsMedium",
+                                    ),
+                                  ),
+                                ],
+                              )),
+                        ],
+                      ),
+                    ),
+                  ),
+                  Divider(color: Colors.black,),
+                  Expanded(
+                    child: artistDashBoardController.dashBoardModel.value.songList?.isNotEmpty ?? false
+                        ? buildUpcomingList()
+                        : buildSquareListShimmerEffect(),
+                  ),
+                ]
+            ),),
           ),
         ),
       ),

@@ -6,6 +6,7 @@ import 'package:get/get.dart';
 import 'package:get/get_state_manager/src/simple/get_controllers.dart';
 import 'package:flutter/material.dart';
 import 'package:sreshgeeth/features/user/login/view/otp_page.dart';
+import 'package:sreshgeeth/features/user/register/view/user_registration.dart';
 
 import '../../../../core/helpers/network/helpers/api_endpoints.dart';
 import '../../../../core/helpers/network/helpers/base_client.dart';
@@ -45,6 +46,7 @@ class LoginController extends GetxController {
                 id: loginModel.value.data!.first.cusId.toString()),
             transition: Transition.cupertino);
       } else if (responseData["status"] == false) {
+        Get.to(const UserRegistration(),transition: Transition.leftToRightWithFade);
         Fluttertoast.showToast(
             msg: '${responseData["msg"]}', backgroundColor: Colors.red);
       }

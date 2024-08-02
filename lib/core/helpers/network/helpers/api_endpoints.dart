@@ -35,4 +35,13 @@ class ApiEndPoints {
   static const String artistDashboard = "dashboard.php";
   static const String artistPodDashboard = "podcast_dashboard";
   static const String artistPodCategory = "podcast_category";
+  static const String scheduleNewpodcast = "add_podcast";
+  static const String startArtistPodcast = "start";
+  static const String initialCallArtist = "ini_call";
+  static const String albumList = "album";
+  static const  String trackList = "track";
+  static const String genrelist = "gener";
+  static const String language = "language";
+  static const String uploadSong = "add_song";
+
 }
